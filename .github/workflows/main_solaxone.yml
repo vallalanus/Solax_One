@@ -21,11 +21,11 @@ jobs:
         with:
           node-version: '20.x'
 
-      - name: npm install, build
+      - name: npm install, build, and test
         run: |
           npm install
           npm run build --if-present
-          
+          npm run test --if-present
 
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
@@ -59,4 +59,4 @@ jobs:
           app-name: 'solaxone'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3244C01EFD704337B5E28A7EB25C0CF8 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_03935C53DD7B41F28597BCB4364ED0A9 }}
